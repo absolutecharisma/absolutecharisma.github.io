@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>~*~ ABSOLUTE CHARISMA ~*~ The #1 Meme Site On The Web!!</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body{margin:0;background:#000033;color:#00ff00;font-family:"Comic Sans MS","Comic Sans",cursive;
+    background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(#8ff 1px,transparent 1px);
+    background-size:60px 60px,97px 97px;background-position:0 0,23px 31px;}
+  a{color:#ffff00} a:visited{color:#ff66ff} a:hover{color:#ff0000;background:#ffff00}
+  .wrap{max-width:860px;margin:0 auto;padding:10px}
+  h1.logo{font-family:Impact,"Arial Black",sans-serif;font-size:clamp(34px,9vw,68px);text-align:center;margin:8px 0;
+    background:linear-gradient(90deg,red,orange,yellow,lime,cyan,blue,magenta,red);background-size:200% 100%;
+    -webkit-background-clip:text;background-clip:text;color:transparent;animation:rb 3s linear infinite;
+    -webkit-text-stroke:1px #fff;letter-spacing:2px}
+  @keyframes rb{to{background-position:200% 0}}
+  .blink{animation:bl 1s steps(2,start) infinite} @keyframes bl{to{visibility:hidden}}
+  .box{border:4px ridge #c0c0c0;background:#000;padding:12px;margin:12px 0}
+  .box.silver{background:#c0c0c0;color:#000;border:3px outset #fff}
+  .center{text-align:center}
+  marquee{background:#ff0000;color:#ffff00;font-weight:bold;border:2px inset #fff;padding:3px;font-size:18px}
+  hr.rainbow{border:0;height:6px;background:linear-gradient(90deg,red,orange,yellow,lime,cyan,blue,violet)}
+  input[type=text],input[type=password],textarea{font-family:"Courier New",monospace;font-size:16px;background:#fff;color:#000;
+    border:2px inset #888;padding:4px;width:min(260px,90%);box-sizing:border-box}
+  textarea{width:100%;min-height:90px;resize:vertical}
+  input[type=file]{max-width:100%;color:#fff;font-family:"Courier New",monospace;font-size:14px}
+  button,.btn{font-family:inherit;font-size:16px;font-weight:bold;background:#c0c0c0;color:#000;border:3px outset #fff;padding:4px 14px;cursor:pointer}
+  button:active{border-style:inset}
+  .err{color:#ff3333;font-weight:bold} .ok{color:#33ff33;font-weight:bold}
+  .meme{position:relative;border:5px groove #ff00ff;background:#111;overflow:hidden;min-height:120px}
+  .meme img{width:100%;height:auto;max-height:520px;object-fit:contain;display:block;background:#111}
+  .cap{position:absolute;left:0;right:0;text-align:center;font-family:Impact,"Arial Black",sans-serif;text-transform:uppercase;
+    color:#fff;font-size:24px;line-height:1.05;padding:4px 6px;-webkit-text-stroke:1.5px #000;paint-order:stroke fill;
+    text-shadow:2px 2px 0 #000;overflow-wrap:anywhere}
+  .cap.t{top:0} .cap.b{bottom:0}
+  .counter{display:inline-block;background:#000;color:#0f0;font-family:"Courier New",monospace;border:3px inset #888;padding:2px 8px;letter-spacing:3px}
+  .hidden{display:none}
+  table.g{width:100%;border-collapse:collapse} table.g td{border:1px solid #0f0;padding:4px;font-size:14px;overflow-wrap:anywhere}
+  .small{font-size:12px;color:#aaa}
+  nav.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;background:#000080;border:3px outset #8080ff;padding:6px;margin:12px 0}
+  nav.nav a{font-weight:bold;text-decoration:none;color:#ffff00;background:#0000cc;border:2px outset #aaf;padding:3px 10px}
+  nav.nav a.on{background:#ff00ff;color:#fff;border-style:inset}
+  nav.nav a:hover{background:#ffff00;color:#f00}
+  .page{display:none} .page.on{display:block}
+  .maker-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;align-items:start}
+  select{font-family:"Courier New",monospace;font-size:15px;max-width:100%}
+  .hof{list-style:none;padding:0;margin:0} .hof li{display:flex;align-items:center;gap:10px;border-bottom:1px dashed #0f0;padding:8px 0}
+  .hof .rank{font-size:28px;width:48px;text-align:center;flex:none}
+  .hof .info{flex:1;overflow-wrap:anywhere} .hof .votes{color:#ff0;font-family:"Courier New",monospace;flex:none}
+  .badge{display:inline-block;border:2px outset #ccc;background:#333;color:#fff;font:bold 11px Arial,sans-serif;padding:3px 6px;margin:2px}
+  .hazard{height:22px;background:repeating-linear-gradient(45deg,#ffd800 0 20px,#000 20px 40px);border:2px solid #000;margin:8px 0}
+  .uc{text-align:center;background:#000;border:4px ridge #ffd800;padding:12px;margin:12px 0}
+  .uc img{max-width:min(320px,80%);height:auto}
+  .uc .fallback{font-size:120px;line-height:1}
+  details{border:1px dashed #0ff;padding:6px 10px;margin:8px 0} summary{cursor:pointer;color:#0ff;font-weight:bold}
+  /* posts */
+  .post{border:3px ridge #00ffff;background:#000;padding:10px;margin:14px 0}
+  .post h3{color:#ff0;margin:4px 0;overflow-wrap:anywhere}
+  .by{font-size:13px;color:#8cf;margin-bottom:6px}
+  .tag{display:inline-block;background:#f0f;color:#fff;font:bold 11px Arial,sans-serif;padding:1px 6px;margin-right:4px}
+  .ptext{white-space:pre-wrap;overflow-wrap:anywhere;color:#fff;margin:6px 0}
+  .media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin:8px 0}
+  .media-grid img,.media-grid video{width:100%;max-height:420px;object-fit:contain;background:#111;border:2px solid #444;cursor:pointer}
+  .media-grid audio{width:100%}
+  .acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
+  .cmt{font-size:14px;color:#fff;border-bottom:1px dotted #555;padding:3px 0;overflow-wrap:anywhere} .cmt b{color:#0ff}
+  .empty{color:#aaa;text-align:center;padding:16px}
+  .newpost p{margin:8px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <marquee scrollamount="7">*** WELCOME TO ABSOLUTE CHARISMA *** THE COOLEST MEME PAGE IN CYBERSPACE *** BEST VIEWED IN NETSCAPE NAVIGATOR 4.0 AT 800x600 *** SIGN MY GUESTBOOK!!! ***</marquee>
+  <h1 class="logo">ABSOLUTE CHARISMA</h1>
+  <p class="center"><span class="blink">&#9733;</span> est. 2026 &bull; memes &bull; vibes &bull; charisma <span class="blink">&#9733;</span></p>
+  <hr class="rainbow">
+
+  <p class="center" id="loading">&#8987; loading...</p>
+
+  <!-- ============ GATE: invite code ============ -->
+  <div id="gate" class="hidden">
+    <div class="box center">
+      <h2 style="color:#ff0">&#128274; INVITE ONLY &#128274;</h2>
+      <p>This site is <b>members only</b> right now. Got an invite code?</p>
+      <form id="inviteForm" autocomplete="off">
+        <input type="text" id="inviteInput" placeholder="ENTER INVITE CODE" maxlength="40" style="text-transform:uppercase"><br><br>
+        <button type="submit">&#9654; REDEEM INVITE</button>
+      </form>
+      <p id="inviteMsg"></p>
+      <p class="small">Each invite code works <b>ONE TIME ONLY</b>. Once it's redeemed, it's gone forever.</p>
+      <hr class="rainbow">
+      <p>Already a member? <a href="#" id="toLogin">Member login</a></p>
+    </div>
+  </div>
+
+  <!-- ============ CREATE ACCOUNT ============ -->
+  <div id="create" class="hidden">
+    <div class="box center">
+      <h2 style="color:#0ff">&#10024; INVITE ACCEPTED! &#10024;</h2>
+      <p>That code is now <b>used up</b> and can never be used again. Create your account:</p>
+      <form id="createForm" autocomplete="off">
+        <p>Username (shown to other members):<br><input type="text" id="newUser" maxlength="20" placeholder="3-20 letters/numbers/_"></p>
+        <p>Email (used to log in):<br><input type="text" id="newEmail" maxlength="120" placeholder="you@example.com" autocapitalize="off" spellcheck="false"></p>
+        <p>Password:<br><input type="password" id="newPass" placeholder="min 6 characters"></p>
+        <p>Confirm password:<br><input type="password" id="newPass2"></p>
+        <button type="submit">&#9654; CREATE ACCOUNT</button>
+      </form>
+      <p id="createMsg"></p>
+    </div>
+  </div>
+
+  <!-- ============ LOGIN ============ -->
+  <div id="login" class="hidden">
+    <div class="box center">
+      <h2 style="color:#ff0">MEMBER LOGIN</h2>
+      <form id="loginForm" autocomplete="off">
+        <p>Email:<br><input type="text" id="logUser" maxlength="120" autocapitalize="off" spellcheck="false"></p>
+        <p>Password:<br><input type="password" id="logPass"></p>
+        <button type="submit">&#9654; LOG IN</button>
+      </form>
+      <p id="loginMsg"></p>
+      <p><a href="#" id="toGate">&laquo; back (I have an invite)</a></p>
+    </div>
+  </div>
+
+  <!-- ============ THE SITE ============ -->
+  <div id="site" class="hidden">
+    <div class="box silver center">
+      <b>Welcome back, <span id="whoami" style="color:#00f"></span>!</b>
+      &nbsp;|&nbsp; <a href="#" id="logout" style="color:#00f">[log out]</a>
+    </div>
+
+    <nav class="nav" id="nav">
+      <a href="#" data-page="home">&#127968; MEME FEED</a>
+      <a href="#" data-page="maker">&#127912; MEME MAKER</a>
+      <a href="#" data-page="forum">&#128172; FORUM</a>
+      <a href="#" data-page="fame">&#127942; HALL OF FAME</a>
+      <a href="#" data-page="guest">&#128214; GUESTBOOK</a>
+      <a href="#" data-page="about">&#10067; ABOUT &amp; LINKS</a>
+      <a href="#" data-page="construction">&#128679; COMING SOON</a>
+    </nav>
+
+    <!-- ===== PAGE: MEME FEED ===== -->
+    <div class="page" id="p-home">
+      <h2 class="center" style="color:#f0f">~*~ THE MEME FEED ~*~</h2>
+      <p class="center"><button type="button" id="goMaker">&#127912; MAKE &amp; POST A MEME</button> <button type="button" id="rfFeed">&#10227; REFRESH</button></p>
+      <div id="feed"></div>
+    </div>
+
+    <!-- ===== PAGE: MEME MAKER ===== -->
+    <div class="page" id="p-maker">
+      <h2 class="center" style="color:#0ff">~*~ MEME MAKER 2000 ~*~</h2>
+      <div class="box">
+        <div class="maker-grid">
+          <div>
+            <p><b>1a.</b> Pick from our selection:<br><select id="mkImg"></select></p>
+            <p><b>1b.</b> ...OR upload your own picture:<br><input type="file" id="mkFile" accept="image/*"><br>
+              <span class="small" id="mkUpNote">(no upload &mdash; using the selection)</span></p>
+            <p><b>2.</b> Top text:<br><input type="text" id="mkTop" maxlength="60" placeholder="top text"></p>
+            <p><b>3.</b> Bottom text:<br><input type="text" id="mkBot" maxlength="60" placeholder="bottom text"></p>
+            <p><button type="button" id="mkPost">&#128228; POST TO FEED</button>
+               <button type="button" id="mkDl">&#128190; DOWNLOAD PNG</button></p>
+            <p id="mkMsg"></p>
+          </div>
+          <div class="meme" id="mkPrev"><img id="mkPic" alt="meme preview"><div class="cap t" id="mkT"></div><div class="cap b" id="mkB"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PAGE: FORUM ===== -->
+    <div class="page" id="p-forum">
+      <h2 class="center" style="color:#ff0">&#128172; THE FORUM &#128172;</h2>
+      <div class="box newpost">
+        <h3 style="color:#0ff;margin:0">&#9998; NEW POST</h3>
+        <form id="fpForm" autocomplete="off">
+          <p>Title:<br><input type="text" id="fpTitle" maxlength="100" placeholder="what's up?" style="width:100%"></p>
+          <p>Message:<br><textarea id="fpText" maxlength="5000" placeholder="say something..."></textarea></p>
+          <p>Attach photos, videos or audio (optional):<br><input type="file" id="fpFiles" accept="image/*,video/*,audio/*" multiple>
+            <br><span class="small">Up to 6 files. Photos up to 50 MB, video/audio up to 15 MB.</span></p>
+          <button type="submit">&#128228; POST</button>
+          <p id="fpMsg"></p>
+        </form>
+      </div>
+      <p class="center"><button type="button" id="rfForum">&#10227; REFRESH POSTS</button></p>
+      <div id="threads"></div>
+    </div>
+
+    <!-- ===== PAGE: HALL OF FAME ===== -->
+    <div class="page" id="p-fame">
+      <h2 class="center" style="color:#ff0">&#127942; HALL OF FAME &#127942;</h2>
+      <div class="box">
+        <p class="center">The most-voted posts on Absolute Charisma. Vote with the &#128077; button on any meme or forum post!</p>
+        <ul class="hof" id="hof"></ul>
+      </div>
+    </div>
+
+    <!-- ===== PAGE: GUESTBOOK ===== -->
+    <div class="page" id="p-guest">
+      <div class="box">
+        <h3 style="color:#ff0">&#128214; GUESTBOOK</h3>
+        <table class="g" id="gb"></table>
+        <form id="gbForm" style="margin-top:8px">
+          <input type="text" id="gbText" maxlength="80" placeholder="say something cool..."> <button>SIGN</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== PAGE: SITE UNDER CONSTRUCTION ===== -->
+    <div class="page" id="p-construction">
+      <div class="uc">
+        <div class="hazard"></div>
+        <h2 style="color:#ffd800;font-family:Impact,'Arial Black',sans-serif;font-size:clamp(26px,7vw,48px);margin:6px 0">
+          <span class="blink">&#128679;</span> SITE UNDER CONSTRUCTION <span class="blink">&#128679;</span>
+        </h2>
+        <img id="ucImg" alt="Smiley worker"
+             src="https://png.pngtree.com/png-vector/20240702/ourmid/pngtree-smiley-shape-representation-worker-png-image_12940128.png"
+             referrerpolicy="no-referrer">
+        <p style="color:#fff;font-size:18px">Our webmaster is hard at work on this section!<br>Please come back soon!<br>
+          For any queries contact: <a href="mailto:stukumuku@gmail.com">stukumuku@gmail.com</a></p>
+        <p class="small">Coming soon: chat room &bull; meme battles &bull; midi player</p>
+        <div class="hazard"></div>
+        <p><a href="#" id="ucBack">&laquo; Back to the memes</a></p>
+      </div>
+    </div>
+
+    <!-- ===== PAGE: ABOUT & LINKS ===== -->
+    <div class="page" id="p-about">
+      <h2 class="center" style="color:#f0f">ABOUT ABSOLUTE CHARISMA</h2>
+      <div class="box">
+        <details open><summary>What is this place?</summary>
+          <p>Absolute Charisma is an invite-only meme hangout, built the old-school way. Memes, forum posts, bad jokes, and zero algorithms.</p></details>
+        <details><summary>How do I get an invite?</summary>
+          <p>Ask a member. Every invite code works exactly once, and then it is gone forever.</p></details>
+        <details><summary>How do I post?</summary>
+          <p>Make a meme in the MEME MAKER (use our pictures or upload your own) and post it to the feed, or start a thread in the FORUM with text, photos, videos or audio.</p></details>
+        <details><summary>Rules of the site</summary>
+          <p>1) Be excellent to each other. 2) No spamming. 3) Only post stuff you have the right to share. 4) Have fun!!!</p></details>
+      </div>
+      <div class="box center">
+        <h3 style="color:#0ff">COOL BADGES</h3>
+        <span class="badge">BEST VIEWED IN NETSCAPE</span>
+        <span class="badge">MADE WITH NOTEPAD</span>
+        <span class="badge">800x600 RULEZ</span>
+        <span class="badge">NO FLASH REQUIRED</span>
+        <span class="badge">WEBRING MEMBER</span>
+        <span class="badge">POWERED BY DIAL-UP</span>
+        <h3 style="color:#0ff">LINKS</h3>
+        <p><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a> (where our template pictures come from)<br>
+        <a href="https://web.archive.org/" target="_blank" rel="noopener">The Wayback Machine</a> (go back in time)<br>
+        <a href="https://en.wikipedia.org/wiki/Doge_(meme)" target="_blank" rel="noopener">The story of Doge</a></p>
+      </div>
+    </div>
+
+    <div class="box center">
+      <p>You are visitor number</p>
+      <div class="counter" id="counter">000000</div>
+      <p>
+        [ <a href="#">&laquo; Prev</a> | <a href="#">Random Site</a> | <a href="#">Next &raquo;</a> ]<br>
+        <small>~ Absolute Charisma WebRing ~</small>
+      </p>
+      <p class="small">Made with Notepad. &copy; 2026 Absolute Charisma. All rights reserved.<br>
+      Template photos from Wikimedia Commons (various free licenses). Member posts belong to their authors.</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+/* ---------------------------------------------------------------
+   Absolute Charisma talks to a Supabase project for accounts,
+   invite codes, posts and file uploads. The URL + publishable key
+   below are SAFE to be public; what protects the data is the
+   row-level security set up by supabase-setup.sql.
+   NEVER put a secret / service_role key in this file.
+---------------------------------------------------------------- */
+const SUPABASE_URL="https://ttmegndjwljabweananj.supabase.co";
+const SUPABASE_KEY="sb_publishable_jJD6KdGm4ZHMz7oAfXgHhg_q_fK1XGp";
+let sb=null;
+try{ sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY); }catch(e){ sb=null; }
+
+const $=id=>document.getElementById(id);
+const norm=s=>s.trim().toUpperCase().replace(/\s+/g,"");
+function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
+function say(id,cls,t){const m=$(id);m.textContent="";m.appendChild(el("span",cls,t));}
+const fmt=ts=>new Date(ts).toLocaleString();
+const rid=()=>(window.crypto&&crypto.randomUUID)?crypto.randomUUID():(Date.now().toString(36)+Math.random().toString(36).slice(2,12));
+const validEmail=e=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);
+
+let profile=null;      // {id, username} of the logged-in member
+let pendingCode=null;  // invite code that has been checked, waiting for account creation
+
+function show(which){
+  $("loading").classList.add("hidden");
+  ["gate","create","login","site"].forEach(x=>$(x).classList.toggle("hidden",x!==which));
+}
+function netErr(err){return (err&&err.message)?err.message:"unknown error";}
+
+async function route(){
+  if(!sb){ show("gate"); say("inviteMsg","err","Couldn't load the Supabase library. Check your internet connection and reload."); return; }
+  try{
+    const {data}=await sb.auth.getSession();
+    if(data&&data.session){ await enterSite(); return; }
+  }catch(e){}
+  show("gate");
+}
+
+/* ---- invite code check (does NOT use up the code; that happens when the account is created) ---- */
+$("inviteForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const code=norm($("inviteInput").value), btn=$("inviteForm").querySelector("button");
+  if(!code) return say("inviteMsg","err","Enter a code!");
+  if(!sb) return say("inviteMsg","err","Couldn't load the Supabase library. Reload the page.");
+  btn.disabled=true; $("inviteMsg").textContent="checking...";
+  const {data,error}=await sb.rpc("check_invite",{p_code:code});
+  btn.disabled=false;
+  if(error) return say("inviteMsg","err","Couldn't reach the server ("+netErr(error)+").");
+  if(!data) return say("inviteMsg","err","❌ Invalid invite code, or it has ALREADY BEEN USED.");
+  pendingCode=code; $("inviteInput").value=""; $("inviteMsg").textContent="";
+  show("create");
+});
+
+/* ---- create account (the server consumes the invite code in the same step) ---- */
+$("createForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  if(!pendingCode){show("gate");return;}
+  const u=$("newUser").value.trim(), em=$("newEmail").value.trim().toLowerCase(), p=$("newPass").value, p2=$("newPass2").value, btn=$("createForm").querySelector("button");
+  if(!/^[A-Za-z0-9_]{3,20}$/.test(u)) return say("createMsg","err","Username: 3-20 letters, numbers or _");
+  if(!validEmail(em)) return say("createMsg","err","Enter a valid email address.");
+  if(p.length<6) return say("createMsg","err","Password must be at least 6 characters.");
+  if(p!==p2) return say("createMsg","err","Passwords do not match.");
+  btn.disabled=true; $("createMsg").textContent="creating account...";
+  const {data,error}=await sb.auth.signUp({email:em,password:p,options:{data:{username:u,invite_code:pendingCode}}});
+  btn.disabled=false;
+  if(error){
+    if(/already registered|already exists/i.test(error.message)) return say("createMsg","err","That email is already registered. Try Member Login.");
+    if(/invalid/i.test(error.message)&&/email/i.test(error.message)) return say("createMsg","err","That email address was rejected. Use a real email address.");
+    if(/database error/i.test(error.message)) return say("createMsg","err","Couldn't create the account: that username may already be taken, or the invite code was just used. Try a different username (or go back and try another invite).");
+    return say("createMsg","err",error.message);
+  }
+  if(!data.session) return say("createMsg","err","Account created, but the server wants email confirmation. (Site owner: turn off \"Confirm email\" in Supabase > Authentication > Providers > Email.) Then use Member Login.");
+  pendingCode=null;
+  ["newUser","newEmail","newPass","newPass2"].forEach(i=>$(i).value=""); $("createMsg").textContent="";
+  await enterSite();
+});
+
+/* ---- login / logout ---- */
+$("loginForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const u=$("logUser").value.trim().toLowerCase(), p=$("logPass").value, btn=$("loginForm").querySelector("button");
+  if(!u||!p) return say("loginMsg","err","Enter your email and password.");
+  btn.disabled=true;
+  const {error}=await sb.auth.signInWithPassword({email:u,password:p});
+  btn.disabled=false;
+  if(error) return say("loginMsg","err",/invalid login/i.test(error.message)?"Wrong email or password.":error.message);
+  $("logPass").value=""; $("loginMsg").textContent=""; await enterSite();
+});
+$("toLogin").onclick=e=>{e.preventDefault();show("login")};
+$("toGate").onclick=e=>{e.preventDefault();show(pendingCode?"create":"gate")};
+$("logout").onclick=async e=>{e.preventDefault();await sb.auth.signOut();profile=null;
+  $("feed").textContent="";$("threads").textContent="";$("hof").textContent="";$("gb").textContent="";show("gate");};
+if(sb) sb.auth.onAuthStateChange(ev=>{ if(ev==="SIGNED_OUT"&&profile){profile=null;show("gate");} });
+
+/* ---- media (private storage bucket; files are shown through short-lived signed links) ---- */
+const MAX_BYTES=15*1024*1024, IMG_MAX=50*1024*1024, MAX_FILES=6; // video/audio 15 MB, photos 50 MB (shrunk before upload)
+const mediaType=f=>f.type.startsWith("image/")?"image":f.type.startsWith("video/")?"video":f.type.startsWith("audio/")?"audio":null;
+const signed=new Map();
+async function signPaths(paths){
+  const now=Date.now();
+  const need=[...new Set(paths)].filter(p=>{const s=signed.get(p);return !s||s.exp-now<600000;});
+  if(!need.length) return;
+  const {data,error}=await sb.storage.from("media").createSignedUrls(need,3600);
+  if(!error&&data) data.forEach(d=>{if(d&&d.signedUrl) signed.set(d.path,{url:d.signedUrl,exp:now+3600000});});
+}
+const urlFor=path=>{const s=signed.get(path);return s?s.url:null;};
+
+// Shrinks big photos before upload so the free storage lasts longer.
+async function shrinkImage(f){
+  if(!/^image\/(jpeg|png|webp)$/.test(f.type)||f.size<300*1024) return {blob:f,ext:null};
+  try{
+    const bmp=await createImageBitmap(f);
+    const s=Math.min(1,1600/Math.max(bmp.width,bmp.height));
+    const c=document.createElement("canvas"); c.width=Math.max(1,Math.round(bmp.width*s)); c.height=Math.max(1,Math.round(bmp.height*s));
+    c.getContext("2d").drawImage(bmp,0,0,c.width,c.height);
+    const png=f.type==="image/png";
+    const b=await new Promise(r=>c.toBlob(r,png?"image/png":"image/jpeg",0.85));
+    if(b&&b.size<f.size) return {blob:b,ext:png?"png":"jpg"};
+  }catch(e){}
+  return {blob:f,ext:null};
+}
+async function uploadFile(f){
+  const type=mediaType(f);
+  let blob=f, ext=(f.name.split(".").pop()||"").toLowerCase().replace(/[^a-z0-9]/g,"").slice(0,5)||"bin";
+  if(type==="image"){const r=await shrinkImage(f);blob=r.blob;if(r.ext)ext=r.ext;}
+  const path=profile.id+"/"+rid()+"."+ext;
+  const {error}=await sb.storage.from("media").upload(path,blob,{contentType:blob.type||f.type||"application/octet-stream",cacheControl:"3600"});
+  if(error) throw error;
+  return {type,path,name:f.name.slice(0,100)};
+}
+async function removeFiles(paths){ if(paths.length){try{await sb.storage.from("media").remove(paths);}catch(e){}} }
+
+/* ---- loading + rendering posts ---- */
+const WC="https://commons.wikimedia.org/wiki/Special:FilePath/";
+const TEMPLATES=[
+  ["Shiba_inu_taiki.jpg","Doge (Shiba Inu)"],
+  ["Surprised_young_cat.JPG","Surprised cat"],
+  ["Cat_November_2010-1a.jpg","Cat portrait"],
+  ["Cat_flap.jpg","Cat at the cat flap"],
+  ["Samoyed_600.jpg","Samoyed"]
+];
+const templateUrl=(f,w)=>WC+encodeURIComponent(f)+"?width="+w;
+const openC=new Set();
+
+async function fetchPosts(){
+  const {data,error}=await sb.from("posts")
+    .select("id,author_id,kind,title,body,meme_top,meme_bottom,template,media,created_at,profiles!author_id(username),votes(user_id),comments(id,body,created_at,profiles!author_id(username))")
+    .order("created_at",{ascending:false}).limit(150);
+  if(error) throw error;
+  const posts=data.map(r=>({
+    id:r.id, author:r.author_id, authorName:(r.profiles&&r.profiles.username)||"?", kind:r.kind,
+    title:r.title||"", text:r.body||"", top:r.meme_top||"", bottom:r.meme_bottom||"", template:r.template,
+    media:(Array.isArray(r.media)?r.media:[]).filter(m=>m&&typeof m.path==="string"&&["image","video","audio"].includes(m.type)),
+    ts:new Date(r.created_at).getTime(),
+    votes:(r.votes||[]).map(v=>v.user_id),
+    comments:(r.comments||[]).slice().sort((a,b)=>new Date(a.created_at)-new Date(b.created_at)).map(c=>({n:(c.profiles&&c.profiles.username)||"?",t:c.body}))
+  }));
+  await signPaths(posts.flatMap(p=>p.media.map(m=>m.path)));
+  return posts;
+}
+
+function mediaNode(m){
+  const u=urlFor(m.path);
+  if(!u) return el("div","small","(file unavailable)");
+  if(m.type==="image"){const i=el("img");i.src=u;i.alt=m.name||"photo";i.loading="lazy";i.title="click to open full size";i.onclick=()=>window.open(u,"_blank","noopener");return i;}
+  if(m.type==="video"){const v=el("video");v.src=u;v.controls=true;v.preload="metadata";return v;}
+  const a=el("audio");a.src=u;a.controls=true;return a;
+}
+async function act(fn){ try{ const r=await fn(); if(r&&r.error) throw r.error; }catch(err){ alert("Something went wrong: "+netErr(err)); } refresh(); }
+
+function card(p){
+  const c=el("div","post");
+  const by=el("div","by");
+  by.append(el("span","tag",p.kind==="meme"?"MEME":"FORUM"),document.createTextNode("by "+p.authorName+" • "+fmt(p.ts)));
+  if(p.kind==="meme"){
+    c.append(by);
+    const box=el("div","meme");
+    const img=new Image(); img.alt=[p.top,p.bottom].filter(Boolean).join(" ")||"meme";
+    const up=p.media[0]&&p.media[0].type==="image"?urlFor(p.media[0].path):null;
+    const tpl=TEMPLATES.some(t=>t[0]===p.template)?templateUrl(p.template,800):null;
+    if(up||tpl) img.src=up||tpl; else img.alt="[image unavailable]";
+    img.onerror=()=>{img.alt="[image could not be loaded]"};
+    box.append(img);
+    if(p.top) box.append(el("div","cap t",p.top));
+    if(p.bottom) box.append(el("div","cap b",p.bottom));
+    c.append(box);
+  } else {
+    if(p.title) c.append(el("h3",null,p.title));
+    c.append(by);
+    if(p.text) c.append(el("div","ptext",p.text));
+    if(p.media.length){const g=el("div","media-grid");p.media.forEach(m=>g.append(mediaNode(m)));c.append(g);}
+  }
+  const acts=el("div","acts");
+  const mine=p.votes.includes(profile.id);
+  const vb=el("button",null,"\u{1F44D} "+p.votes.length+(mine?" (voted)":""));
+  vb.onclick=()=>{vb.disabled=true;act(()=>mine
+    ?sb.from("votes").delete().eq("post_id",p.id).eq("user_id",profile.id)
+    :sb.from("votes").insert({post_id:p.id,user_id:profile.id}));};
+  acts.append(vb);
+  if(p.author===profile.id){
+    const del=el("button",null,"\u{1F5D1} DELETE");
+    del.onclick=()=>{ if(!confirm("Delete this post?")) return; del.disabled=true;
+      act(async()=>{const r=await sb.from("posts").delete().eq("id",p.id); if(!r.error) await removeFiles(p.media.map(m=>m.path)); return r;}); };
+    acts.append(del);
+  }
+  c.append(acts);
+  const d=el("details"); if(openC.has(p.id)) d.open=true;
+  d.addEventListener("toggle",()=>{d.open?openC.add(p.id):openC.delete(p.id)});
+  d.append(el("summary",null,"\u{1F4AC} "+p.comments.length+(p.comments.length===1?" comment":" comments")));
+  p.comments.forEach(cm=>{const r=el("div","cmt");r.append(el("b",null,cm.n+": "),document.createTextNode(cm.t));d.append(r);});
+  const f=el("form"); const inp=el("input"); inp.type="text"; inp.maxLength=300; inp.placeholder="write a comment..."; inp.style.margin="6px 6px 0 0";
+  f.append(inp,el("button",null,"REPLY"));
+  f.onsubmit=e=>{e.preventDefault();const t=inp.value.trim();if(!t)return;openC.add(p.id);act(()=>sb.from("comments").insert({post_id:p.id,body:t}));};
+  d.append(f); c.append(d);
+  return c;
+}
+function fill(box,list,emptyMsg){
+  box.textContent="";
+  if(!list.length){box.append(el("div","empty box",emptyMsg));return;}
+  list.forEach(p=>box.append(card(p)));
+}
+function postLabel(p){
+  if(p.kind==="meme") return [p.top,p.bottom].filter(Boolean).join(" / ")||"(meme)";
+  return p.title||p.text.slice(0,80)||"(media post)";
+}
+function renderHof(posts){
+  const ul=$("hof"); ul.textContent="";
+  const top=posts.filter(p=>p.votes.length>0).sort((a,b)=>b.votes.length-a.votes.length||b.ts-a.ts).slice(0,10);
+  if(!top.length){ul.append(el("li",null,"Nothing here yet — vote on some posts and the best ones will show up!"));return;}
+  top.forEach((p,i)=>{
+    const li=el("li");
+    li.append(el("div","rank",["\u{1F947}","\u{1F948}","\u{1F949}"][i]||("#"+(i+1))));
+    const info=el("div","info"); info.append(el("span","tag",p.kind==="meme"?"MEME":"FORUM"),document.createTextNode(postLabel(p)+" — by "+p.authorName));
+    li.append(info,el("div","votes",p.votes.length+" votes"));
+    ul.append(li);
+  });
+}
+let refreshSeq=0, lastRefresh=0;
+async function refresh(){
+  if(!profile) return;
+  const seq=++refreshSeq;
+  let posts;
+  try{ posts=await fetchPosts(); }
+  catch(err){ if(seq!==refreshSeq) return;
+    const msg="Couldn't load posts: "+netErr(err);
+    $("feed").textContent=msg; $("threads").textContent=msg; return; }
+  if(seq!==refreshSeq||!profile) return;
+  lastRefresh=Date.now();
+  fill($("feed"),posts.filter(p=>p.kind==="meme"),"No memes yet. Be the first — hit the MEME MAKER!");
+  fill($("threads"),posts.filter(p=>p.kind==="forum"),"No forum posts yet. Start the first thread!");
+  renderHof(posts);
+}
+$("rfFeed").onclick=refresh; $("rfForum").onclick=refresh;
+document.addEventListener("visibilitychange",()=>{ if(!document.hidden&&profile&&Date.now()-lastRefresh>60000){refresh();loadGB();} });
+
+/* ---- forum posting ---- */
+$("fpForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const title=$("fpTitle").value.trim(), text=$("fpText").value.trim(), files=[...$("fpFiles").files], btn=$("fpForm").querySelector("button[type=submit]");
+  if(!title&&!text&&!files.length) return say("fpMsg","err","Write something or attach a file first!");
+  if(files.length>MAX_FILES) return say("fpMsg","err","Max "+MAX_FILES+" files per post.");
+  for(const f of files){
+    if(!mediaType(f)) return say("fpMsg","err",'"'+f.name+'" is not a photo, video or audio file.');
+    if(f.size>(mediaType(f)==="image"?IMG_MAX:MAX_BYTES)) return say("fpMsg","err",'"'+f.name+'" is too big ('+(mediaType(f)==="image"?"photos: 50 MB":"video/audio: 15 MB")+' max).');
+  }
+  btn.disabled=true; say("fpMsg","ok",files.length?"Uploading...":"Posting...");
+  const media=[];
+  try{
+    for(const f of files) media.push(await uploadFile(f));
+    const {error}=await sb.from("posts").insert({kind:"forum",title,body:text,media});
+    if(error) throw error;
+  }catch(err){
+    await removeFiles(media.map(m=>m.path));
+    btn.disabled=false; return say("fpMsg","err","Couldn't post: "+netErr(err));
+  }
+  btn.disabled=false; $("fpForm").reset(); say("fpMsg","ok","Posted!"); refresh();
+});
+
+/* ---- meme maker ---- */
+let mkFile=null, mkUrl=null;
+function mkUpdate(){
+  $("mkPic").src=mkUrl||templateUrl($("mkImg").value,700);
+  $("mkT").textContent=$("mkTop").value; $("mkB").textContent=$("mkBot").value;
+  $("mkT").style.display=$("mkTop").value.trim()?"":"none"; $("mkB").style.display=$("mkBot").value.trim()?"":"none";
+}
+function mkClearUpload(){ if(mkUrl)URL.revokeObjectURL(mkUrl); mkUrl=null;mkFile=null;$("mkFile").value="";$("mkUpNote").textContent="(no upload — using the selection)"; }
+function initMaker(){
+  const sel=$("mkImg"); if(sel.options.length) return;
+  TEMPLATES.forEach(([f,l])=>{const o=el("option",null,l);o.value=f;sel.append(o);});
+  sel.addEventListener("change",()=>{mkClearUpload();mkUpdate();});
+  [$("mkTop"),$("mkBot")].forEach(x=>x.addEventListener("input",mkUpdate));
+  $("mkFile").addEventListener("change",()=>{
+    const f=$("mkFile").files[0]; if(!f) return;
+    if(!f.type.startsWith("image/")){mkClearUpload();say("mkMsg","err","That's not an image file.");mkUpdate();return;}
+    if(f.size>IMG_MAX){mkClearUpload();say("mkMsg","err","Image too big (50 MB max).");mkUpdate();return;}
+    if(mkUrl)URL.revokeObjectURL(mkUrl);
+    mkFile=f; mkUrl=URL.createObjectURL(f); $("mkMsg").textContent="";
+    $("mkUpNote").textContent="Using your upload: "+f.name; mkUpdate();
+  });
+  mkUpdate();
+}
+$("mkPost").onclick=async()=>{
+  const top=$("mkTop").value.trim(), bottom=$("mkBot").value.trim(), btn=$("mkPost");
+  if(!top&&!bottom) return say("mkMsg","err","Add some caption text first!");
+  btn.disabled=true; say("mkMsg","ok","Posting...");
+  const media=[];
+  try{
+    const row={kind:"meme",meme_top:top,meme_bottom:bottom};
+    if(mkFile) media.push(await uploadFile(mkFile)); else row.template=$("mkImg").value;
+    row.media=media;
+    const {error}=await sb.from("posts").insert(row);
+    if(error) throw error;
+  }catch(err){
+    await removeFiles(media.map(m=>m.path));
+    btn.disabled=false; return say("mkMsg","err","Couldn't post: "+netErr(err));
+  }
+  btn.disabled=false;
+  $("mkTop").value="";$("mkBot").value="";mkClearUpload();mkUpdate();$("mkMsg").textContent="";
+  await refresh(); showPage("home"); window.scrollTo(0,0);
+};
+function drawCap(x,text,W,H,top){
+  text=(text||"").trim().toUpperCase(); if(!text) return;
+  const fs=Math.max(18,Math.round(W/11));
+  x.font="bold "+fs+'px Impact,"Arial Black",sans-serif'; x.textAlign="center"; x.lineJoin="round";
+  x.lineWidth=fs/8; x.strokeStyle="#000"; x.fillStyle="#fff";
+  const lines=[]; let cur="";
+  text.split(/\s+/).forEach(w=>{const t=cur?cur+" "+w:w; if(x.measureText(t).width>W*0.94&&cur){lines.push(cur);cur=w;}else cur=t;});
+  lines.push(cur);
+  const lh=fs*1.05;
+  lines.forEach((l,i)=>{const y=top?fs+i*lh+6:H-6-(lines.length-1-i)*lh-fs*0.2;x.strokeText(l,W/2,y);x.fillText(l,W/2,y);});
+}
+$("mkDl").onclick=()=>{
+  const img=new Image(); if(!mkUrl) img.crossOrigin="anonymous";
+  img.onload=()=>{
+    try{
+      const W=Math.min(img.naturalWidth||600,900), H=Math.round(img.naturalHeight*W/img.naturalWidth);
+      const c=document.createElement("canvas"); c.width=W; c.height=H;
+      const x=c.getContext("2d"); x.drawImage(img,0,0,W,H);
+      drawCap(x,$("mkTop").value,W,H,true); drawCap(x,$("mkBot").value,W,H,false);
+      c.toBlob(b=>{const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="absolute-charisma-meme.png";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),5000);});
+    }catch(err){say("mkMsg","err","This picture can't be exported by your browser. Try uploading your own image instead.");}
+  };
+  img.onerror=()=>say("mkMsg","err","Couldn't load the picture to export it.");
+  img.src=mkUrl||templateUrl($("mkImg").value,900);
+};
+
+/* ---- guestbook ---- */
+async function loadGB(){
+  const t=$("gb");
+  const {data,error}=await sb.from("guestbook").select("body,created_at,profiles!author_id(username)").order("created_at",{ascending:false}).limit(30);
+  t.textContent="";
+  const row=(a,b)=>{const tr=document.createElement("tr");if(b==null){tr.append(el("td",null,a));}else{const n=el("td",null,a);n.style.color="#0ff";n.style.width="30%";tr.append(n,el("td",null,b));}t.append(tr);};
+  if(error) return row("Couldn't load the guestbook: "+netErr(error));
+  if(!data.length) return row("No entries yet — be the first to sign!");
+  data.forEach(x=>row((x.profiles&&x.profiles.username)||"?",x.body));
+}
+$("gbForm").addEventListener("submit",async e=>{
+  e.preventDefault(); const t=$("gbText").value.trim(); if(!t)return;
+  const {error}=await sb.from("guestbook").insert({body:t});
+  if(error) return alert("Couldn't sign: "+netErr(error));
+  $("gbText").value=""; loadGB();
+});
+
+/* ---- navigation & misc ---- */
+let curPage="home";
+function showPage(p){
+  curPage=p;
+  document.querySelectorAll(".page").forEach(x=>x.classList.toggle("on",x.id==="p-"+p));
+  document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("on",a.dataset.page===p));
+}
+document.querySelectorAll("#nav a").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();showPage(a.dataset.page);window.scrollTo(0,0);}));
+$("goMaker").onclick=()=>{showPage("maker");window.scrollTo(0,0);};
+$("ucBack").onclick=e=>{e.preventDefault();showPage("home");window.scrollTo(0,0);};
+$("ucImg").onerror=function(){const d=el("div","fallback","\u{1F477}");this.replaceWith(d);};
+
+async function enterSite(){
+  let user=null;
+  try{ const r=await sb.auth.getUser(); user=r.data&&r.data.user; }catch(e){}
+  if(!user){ try{await sb.auth.signOut();}catch(e){} profile=null; show("gate"); return; }
+  const {data,error}=await sb.from("profiles").select("id,username").eq("id",user.id).single();
+  if(error||!data){ try{await sb.auth.signOut();}catch(e){} profile=null; show("gate"); say("inviteMsg","err","Couldn't load your profile: "+netErr(error)); return; }
+  profile=data;
+  $("whoami").textContent=profile.username;
+  initMaker(); showPage(curPage); show("site");
+  refresh(); loadGB();
+  sb.rpc("bump_visits").then(r=>{ if(r.data!=null) $("counter").textContent=String(r.data).padStart(6,"0"); });
+}
+
+route();
+</script>
+</body>
+</html>
